@@ -24,6 +24,8 @@ if (!$this) {
     <link rel="shortcut icon" href="<?php echo URL; ?>public/img/favicon-php.ico" rel="stylesheet" />
 
     <!-- CSS -->
+    <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet">
 

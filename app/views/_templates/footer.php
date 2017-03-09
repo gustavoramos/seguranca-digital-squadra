@@ -10,6 +10,11 @@
   </footer>
 </nav>
 
+<!-- JavaScript -->
+<script src="<?php echo URL; ?>public/js/application.js"></script>
+<script src="<?php echo URL; ?>public/js/jquery.min.js"></script>
+<script src="<?php echo URL; ?>public/js/jquery-1.11.1.min.js"></script>
+
 <!-- Fim do body -->
 </body>
 </html>

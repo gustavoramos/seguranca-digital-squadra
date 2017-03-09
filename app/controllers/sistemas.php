@@ -53,10 +53,20 @@
    		// Chama o método de alterar sistema
    		public function alterarSistema() {
 	        if (isset($_POST["submit_alterar_sistema"])) {
-	            $this->sistema->alterarSistema($_POST["descricao"], $_POST["sigla"],  $_POST["email"], $_POST["url"], POST["status"], POST["justificativa"], POST["updated_at"], $_POST['sistema_id']);
+	            $this->sistema->alterarSistema($_POST["descricao"], $_POST["sigla"], $_POST["email"], $_POST["url"], $_POST["status"], $_POST["justificativa"], $_POST["updated_at"], $_POST['sistema_id']);
 	        }
 
 	        // Redireciona para index de sistema após salvar formulário 
+	        header('location: ' . URL_WITH_INDEX_FILE . 'sistemas/index');
+    	}
+
+    	// Chama o método de pesquisar sistema
+    	public function pesquisarSistema() {
+    		if (isset($_POST["submit_pesquisar_sistema"])) {
+    			$this->sistema->pesquisarSistema($_POST["descricao"]);
+    		}
+
+    		// Redireciona para index de sistema após salvar formulário 
 	        header('location: ' . URL_WITH_INDEX_FILE . 'sistemas/index');
     	}
 

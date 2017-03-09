@@ -41,10 +41,18 @@
 
     	// Método que altera um sistema no banco de dados 
     	public function alterarSistema($descricao, $sigla, $email, $url, $status, $justificativa, $updated_at, $sistema_id) {
-	        $sql = "UPDATE sistema SET descricao = :descricao, sigla = :sigla, email = 						   :email, url = :url, status = :status, justificativa = 							   :justificativa, updated_at = :updated_at WHERE id = 						  :sistema_id";
+	        $sql = "UPDATE sistema SET descricao = :descricao, sigla = :sigla, email = 	:email, url = :url, status = :status, justificativa = :justificativa, updated_at = :updated_at WHERE id = :sistema_id";
 	        $query = $this->db->prepare($sql);
-	        $parameters = array(':descricao' => $descricao, ':sigla' => $sigla, ':email' => 			  $email, ':url' => $url, ':status' => $status, ':justificativa' =>						   $justificativa, ':updated_at' => $updated_at, ':song_id' => 				  $song_id);
+	        $parameters = array(':descricao' => $descricao, ':sigla' => $sigla, ':email' => $email, ':url' => $url, ':status' => $status, ':justificativa' => $justificativa, ':updated_at' => $updated_at, ':sistema_id' => $sistema_id);
 	        $query->execute($parameters);
+    	}
+
+    	// Método que pesquisa sistemas por descrição, sigla e e-mail
+    	public function pesquisarSistema() {
+    		$sql = "SELECT * FROM sistema WHERE descricao LIKE '%".$descricao. "%'";
+    		$query = $this->db->prepare($sql);
+    		$query->execute();
+    		return $query->fetchAll();
     	}
 
 	}

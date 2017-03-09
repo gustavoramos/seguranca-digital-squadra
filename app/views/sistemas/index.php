@@ -14,10 +14,10 @@
         <button type="button" class="btn btn-success">Novo Sistema</button>
       </a>
     </div>
+    <form class="navbar-form navbar-right" action="<?php echo URL_WITH_INDEX_FILE; ?>sistemas/pesquisarsistema" method="POST">
 
-    <button type="button" class="btn btn-default">Limpar</button> 
+      <button type="reset" class="btn btn-default" >Limpar</button> 
 
-    <form class="navbar-form navbar-right">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Descrição">
       </div>
@@ -27,7 +27,7 @@
       <div class="form-group">
         <input type="text" class="form-control" size="30" placeholder="E-mail de atendimento do sistema">
       </div>
-      <button type="submit" class="btn btn-default">Pesquisar</button>
+      <button type="submit" name="submit_pesquisar_sistema" class="btn btn-default">Pesquisar</button>
     </form>
   </div>
 </div>
@@ -62,7 +62,14 @@
                 <?php if (isset($sistema->url)) echo htmlspecialchars($sistema->url, ENT_QUOTES, 'UTF-8'); ?>
               </td>
               <td>
-                <?php if (isset($sistema->status)) echo htmlspecialchars($sistema->status, ENT_QUOTES, 'UTF-8'); ?>
+                <?php if (isset($sistema->status) && $sistema->status == 0) {
+                  echo "Ativo";
+                }
+
+                else {
+                    echo "Cancelado";
+                }
+                ?>
               </td>
               <td>
                 <a href="<?php echo URL_WITH_INDEX_FILE . 'sistemas/editarsistema/' . htmlspecialchars($sistema->id, ENT_QUOTES, 'UTF-8'); ?>">Alterar</a>
