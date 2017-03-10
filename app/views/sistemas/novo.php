@@ -1,7 +1,5 @@
 <?php if (!$this) { exit(header('HTTP/1.0 403 Forbidden')); } ?>
 
-<h3 id="demo"></h3>
-
 <ol class="breadcrumb">
   <li><a href="<?php echo URL_WITH_INDEX_FILE; ?>">Home</a></li>
   <li><a href="<?php echo URL_WITH_INDEX_FILE; ?>sistemas/">Pesquisar Sistemas</a></li>
@@ -18,13 +16,13 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="descricao">Descrição<span class="obrigatorio"> *</span></label>
-              <input type="text" class="form-control" name="descricao" value="" autofocus required oninvalid="this.setCustomValidity('Dados obrigatórios não informados!')" />
+              <input type="text" class="form-control" name="descricao" value="" autofocus required />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="sigla">Sigla<span class="obrigatorio"> *</span></label>
-              <input type="text" class="form-control" name="sigla" value="" required oninvalid="this.setCustomValidity('Dados obrigatórios não informados!')" />
+              <input type="text" class="form-control" name="sigla" value="" required />
             </div>
           </div>
         </div>
@@ -32,7 +30,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="email">E-mail de atendimento do sistema</label>
-              <input type="email" class="form-control" name="email" placeholder="email@exemplo.com" value="" oninvalid="this.setCustomValidity('E-mail inválido!')" />
+              <input type="email" class="form-control" name="email" placeholder="email@exemplo.com" value="" />
             </div>
           </div>
           <div class="col-md-6">
@@ -46,7 +44,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="btn btn-group pull-right">
-              <input class="btn btn-primary" type="submit" name="submit_adicionar_sistema" onclick="myFunction()" value="Salvar" />
+              <input class="btn btn-primary" type="submit" name="submit_adicionar_sistema" value="Salvar" />
             </div>
             <div class="btn btn-group pull-right">
               <a href="<?php echo URL_WITH_INDEX_FILE; ?>sistemas/">

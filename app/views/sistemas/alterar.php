@@ -19,13 +19,13 @@
                   <div class="col-md-6">
                   <div class="form-group">
                     <label for="descricao">Descrição<span class="obrigatorio"> *</span></label>
-                    <input type="text" class="form-control" name="descricao" value="<?php echo htmlspecialchars($sistema->descricao, ENT_QUOTES, 'UTF-8'); ?>" autofocus required oninvalid="this.setCustomValidity('Dados obrigatórios não informados!')" />
+                    <input type="text" class="form-control" name="descricao" value="<?php echo htmlspecialchars($sistema->descricao, ENT_QUOTES, 'UTF-8'); ?>" autofocus required />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="sigla">Sigla<span class="obrigatorio"> *</span></label>
-                    <input type="text" class="form-control" name="sigla" value="<?php echo htmlspecialchars($sistema->sigla, ENT_QUOTES, 'UTF-8'); ?>" required oninvalid="this.setCustomValidity('Dados obrigatórios não informados!')" />
+                    <input type="text" class="form-control" name="sigla" value="<?php echo htmlspecialchars($sistema->sigla, ENT_QUOTES, 'UTF-8'); ?>" required />
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="email">E-mail de atendimento do sistema</label>
-                    <input type="email" class="form-control" name="email" oninvalid="this.setCustomValidity('E-mail inválido!')" value="<?php echo htmlspecialchars($sistema->email, ENT_QUOTES, 'UTF-8'); ?>" />
+                    <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($sistema->email, ENT_QUOTES, 'UTF-8'); ?>" />
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -74,7 +74,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="apdated_at">Data da última alteração</label>
-                      <input type="text" id="disabledInput" class="form-control" name="updated_at" value="<?php echo htmlspecialchars($sistema->updated_at, ENT_QUOTES, 'UTF-8'); ?>" disabled />
+                      <input type="text" id="disabledInput" class="form-control" name="updated_at" value="<?php echo htmlspecialchars($sistema->updated_at = date('d/m/Y'), ENT_QUOTES, 'UTF-8'); ?>" disabled />
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="justificativa">Nova justificativa de alteração<span class="obrigatorio"> *</span></label>
-                      <textarea class="form-control" name="justificativa" rows="3"></textarea>
+                      <textarea class="form-control" name="justificativa" rows="3" required ></textarea>
                     </div>
                   </div>
                 </div>
